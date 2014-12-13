@@ -37,7 +37,18 @@
     }
   </style>
   <body>
-    If you see this then something is wrong.
+    <p id="no-js" style="visibility: visible">
+      Failed to run Javascript.
+    </p>
+    <p id="app-timeout" style="visibility: hidden">
+      Failed to load application in time.
+    </p>
+    <script>
+      document.querySelector("#no-js").style.visibility = "hidden";
+      setInterval(function() {
+        document.querySelector("#app-timeout").style.visibility = "visible";
+      }, 1000);
+    </script>
     <script src="bundle.js"></script>
   </body>
 </html>
