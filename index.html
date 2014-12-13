@@ -1,7 +1,41 @@
 <html>
   <head>
-    <title>JS Clock</title>
+    <title>ES6 React NodeWebKit Clock</title>
   </head>
+  <style>
+    html, body, select {
+      background: #444444;
+      color: white;
+      font-family: monospace;
+    }
+
+    select {
+      font-size: 100%;
+      border: #888888 1px solid;
+      border-radius: 0;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      padding: 0 0.5em;
+    }
+
+    select:focus {
+      outline: none;
+    }
+
+    .clock {
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    .clock > span {
+      display: block;
+    }
+
+    .clock, select.tzchooser > option {
+      text-align: center;
+    }
+  </style>
   <body>
     If you see this then something is wrong.
     <script src="bundle.js"></script>

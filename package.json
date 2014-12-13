@@ -23,6 +23,6 @@
   },
   "scripts": {
     "bundle": "browserify ./index.js > bundle.js",
-    "start": "nodewebkit"
+    "start": "browserify ./index.js > bundle.js && nodewebkit"
   }
 }

@@ -1,20 +1,23 @@
 import * as React from "react";
 import * as moment from "moment-timezone";
 
+import tz from "./tz";
+
+
 class TZChooser {
   getDefaultProps() {
     return {name: "tzchooser"};
   }
   getInitialState() {
-    return {zone: "UTC"};
+    return {zone: tz()};
   }
   handleChange(event) {
     this.setState({zone: event.target.value});
     this.props.onChange(event.target.value);
   }
   render() {
-    var zones = moment.tz.names();
-    var zoneTemplate = function(zoneName) {
+    var zones = moment.tz.names(),
+        zoneTemplate = function(zoneName) {
       return <option key={zoneName} value={zoneName}>{zoneName}</option>
     };
     return <select className="tzchooser"
