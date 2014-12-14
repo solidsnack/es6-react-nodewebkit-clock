@@ -12,4 +12,4 @@ DONE:
 
 TODO:
 
-* Source maps
+* Source maps + minifcation
