@@ -7,7 +7,7 @@ import tz from "./tz";
 
 class Clock {
   getInitialState() {
-    return {tz: tz(), t: moment(), format: "YYYY-DD-MM hh:mm:ss"};
+    return {tz: tz(), t: moment(), format: "YYYY-DD-MM HH:mm:ss"};
   }
   handleTZChange(tzNew) {
     this.setState({tz: tzNew})
