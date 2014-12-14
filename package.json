@@ -24,5 +24,9 @@
   "scripts": {
     "bundle": "browserify ./index.js > bundle.js",
     "start": "browserify ./index.js > bundle.js && nodewebkit"
+  },
+  "window": {
+    "title": "NodeWebKit Clock",
+    "toolbar": false
   }
 }
