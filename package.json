@@ -21,12 +21,10 @@
       "6to5-browserify"
     ]
   },
+  "inject-js-start": "./inject.js",
   "scripts": {
-    "bundle": "browserify ./index.js > bundle.js",
-    "start": "browserify ./index.js > bundle.js && nodewebkit"
-  },
-  "window": {
-    "title": "NodeWebKit Clock",
-    "toolbar": false
+    "bundle": "browserify ./index.js --no-bundle-external > bundle.js",
+    "start":
+      "browserify ./index.js --no-bundle-external > bundle.js && nodewebkit"
   }
 }
