@@ -1,3 +1,5 @@
+A skeleton NodeWebKit app using ES6 and React.
+
 DONE:
 
 * Browserify
