@@ -1,5 +1,7 @@
 import * as React from "react";
 
-import Clock from "./clock/clock";
+import * as Clock from "./lib";
 
-React.render(<Clock />, document.body);
+window.Clock = Clock; // "export" for use from console.
+
+React.render(<Clock.Clock />, document.body);
