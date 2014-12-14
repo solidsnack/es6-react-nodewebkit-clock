@@ -1,52 +1,48 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>ES6 React NodeWebKit Clock</title>
   </head>
   <style>
-    html, body, select {
-      background: #444444;
-      color: white;
-      font-family: monospace;
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: table;
     }
 
-    select {
-      font-size: 100%;
-      border: #888888 1px solid;
-      border-radius: 0;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      padding: 0 0.5em;
-    }
-
-    select:focus {
-      outline: none;
-    }
-
-    .clock {
+    body > div, body > .clock {
       width: 100%;
       height: 100%;
       vertical-align: middle;
+      text-align: center;
+      display: table-cell;
     }
 
     .clock > span {
       display: block;
     }
-
-    .clock, select.tzchooser > option {
-      text-align: center;
-    }
   </style>
   <body>
-    <p id="no-js" style="visibility: visible">
-      Failed to run Javascript.
-    </p>
-    <p id="app-timeout" style="visibility: hidden">
-      Failed to load application in time.
-    </p>
+    <div id="error-messages">
+      <p id="no-js" style="display: block">
+        Failed to run Javascript.
+      </p>
+      <p id="app-timeout" style="display: none">
+        Failed to load main application.
+      </p>
+    </div>
     <script>
-      document.querySelector("#no-js").style.visibility = "hidden";
-      setInterval(function() {
-        document.querySelector("#app-timeout").style.visibility = "visible";
+      document.querySelector("#no-js").style.display = "none";
+      setTimeout(function() {
+        try {
+          document.querySelector("#app-timeout").style.display = "block";
+        } catch (e) {
+          if (!(e instanceof TypeError)) {
+            throw e;
+          }
+        }
       }, 1000);
     </script>
     <script src="bundle.js"></script>
