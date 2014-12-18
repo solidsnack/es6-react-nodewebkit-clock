@@ -1,5 +1,5 @@
 {
-  "name": "nw-clock",
+  "name": "es6-react-nodewebkit-clock",
   "version": "0.0.0",
   "description": "NodeWebKit clock",
   "main": "index.html",
@@ -24,6 +24,7 @@
   "inject-js-start": "./inject.js",
   "scripts": {
     "bundle": "browserify ./index.js --no-bundle-external > bundle.js",
+    "full": "browserify ./index.js > bundle.js",
     "start":
       "browserify ./index.js --no-bundle-external > bundle.js && nodewebkit"
   }
