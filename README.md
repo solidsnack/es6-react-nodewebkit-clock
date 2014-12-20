@@ -1,6 +1,16 @@
 A skeleton NodeWebKit app using ES6 and React.
 
-DONE:
+    ##  Compile ES6+React to ES5
+    :;  npm install
+
+    ##  Run in NodeWebKit with minimal bundle
+    :;  npm start
+
+    ##  Compile full for browser and open in browser
+    :;  npm run browser
+    :;  /path/to/browser index.html
+
+# Done
 
 * Browserify
 * ES6
@@ -10,6 +20,6 @@ DONE:
 * Load all modules in dev environment
 
 
-TODO:
+# To do:
 
-* Source maps + minifcation
+* Source maps + minifcation _Pretty hard, actually_

@@ -9,17 +9,18 @@ class TZChooser {
     return {name: "tzchooser"};
   }
   getInitialState() {
-    return {zone: tz()};
+    return {zone: this.props.tz || tz()};
   }
   handleChange(event) {
-    this.setState({zone: event.target.value});
-    this.props.onChange(event.target.value);
+    var zone = event.target.value;
+    this.setState({zone});
+    if (this.props.onChange) this.props.onChange(zone);
   }
   render() {
     var zones = moment.tz.names(),
-        zoneTemplate = function(zoneName) {
-      return <option key={zoneName} value={zoneName}>{zoneName}</option>
-    };
+        zoneTemplate = (zoneName) => {
+          return <option key={zoneName} value={zoneName}>{zoneName}</option>
+        };
     return <select className="tzchooser"
                    onChange={this.handleChange}
                    value={this.state.zone}

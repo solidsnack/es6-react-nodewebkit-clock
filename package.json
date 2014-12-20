@@ -2,7 +2,7 @@
   "name": "es6-react-nodewebkit-clock",
   "version": "0.0.0",
   "description": "NodeWebKit clock",
-  "main": "index.html",
+  "main": "es5/index.js",
   "author": "jason.dusek@gmail.com",
   "license": "Apache 2",
   "dependencies": {
@@ -23,9 +23,8 @@
   },
   "inject-js-start": "./inject.js",
   "scripts": {
-    "bundle": "browserify ./index.js --no-bundle-external > bundle.js",
-    "full": "browserify ./index.js > bundle.js",
-    "start":
-      "browserify ./index.js --no-bundle-external > bundle.js && nodewebkit"
+    "browser": "browserify es6/app.js > browser.js",
+    "prepublish": "6to5 --module -s -d es5/ es6/",
+    "start": "browserify --no-bundle-external es6/app.js > nw.js && nodewebkit"
   }
 }
