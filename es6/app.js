@@ -1,7 +1,7 @@
 import * as moment from "moment-timezone";
 import * as React from "react";
 
-import * as Clock from "./es5";
+import * as Clock from "./index";
 
 // "export" for use from console.
 window.moment = moment;
