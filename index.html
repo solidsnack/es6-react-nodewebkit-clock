@@ -46,6 +46,17 @@
         }
       }, 1000);
     </script>
-    <script src="bundle.js"></script>
+    <script>
+      function addScript(src) {
+        var script = document.createElement("script");
+        script.setAttribute("src", src);
+        document.body.appendChild(script);
+      }
+      if (typeof global !== "undefined" && global.es6NodeWebKitClockApp) {
+        addScript("./nw.js");
+      } else {
+        addScript("./browser.js");
+      }
+    </script>
   </body>
 </html>
