@@ -25,6 +25,7 @@
   "scripts": {
     "browser": "browserify es6/app.js > browser.js",
     "prepublish": "6to5 --module -s -d es5/ es6/",
+    "postinstall": "[ -d es5/ ] || npm run prepublish",
     "start": "browserify --no-bundle-external es6/app.js > nw.js && nodewebkit"
   }
 }
