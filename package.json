@@ -12,13 +12,13 @@
   },
   "devDependencies": {
     "6to5": "^1.14.17",
-    "6to5-browserify": "^1.4.0",
+    "6to5ify": "^1.4.0",
     "browserify": "^7.0.0",
     "nodewebkit": "^0.11.2-1"
   },
   "browserify": {
     "transform": [
-      "6to5-browserify"
+      "6to5ify"
     ]
   },
   "inject-js-start": "./inject.js",
