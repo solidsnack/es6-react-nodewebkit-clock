@@ -12,20 +12,14 @@
   },
   "devDependencies": {
     "6to5": "^1.14.17",
-    "6to5ify": "^1.4.0",
     "browserify": "^7.0.0",
     "nodewebkit": "^0.11.2-1"
   },
-  "browserify": {
-    "transform": [
-      "6to5ify"
-    ]
-  },
   "inject-js-start": "./inject.js",
   "scripts": {
-    "browser": "browserify es6/app.js > browser.js",
+    "browser": "browserify es5/app.js > browser.js",
     "prepublish": "6to5 --module -s -d es5/ es6/",
     "postinstall": "[ -d es5/ ] || npm run prepublish",
-    "start": "browserify --no-bundle-external es6/app.js > nw.js && nodewebkit"
+    "start": "browserify --no-bundle-external es5/app.js > nw.js && nodewebkit"
   }
 }
